@@ -6,7 +6,7 @@ body
 }
 
 #banner {
-	position: absolute;
+	position: relative;
 	top: 0px;
 	left: 0px;
 	right: 0px;
@@ -40,7 +40,15 @@ ul.navbar
 h1 
 {
   font-family: Helvetica, Geneva, Arial,
-        SunSans-Regular, sans-serif 
+        SunSans-Regular, sans-serif;
+	text-align: center;
+	font-size: 45px
+}
+h2
+{
+  font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+  text-align: right;
+  font-size: 34px
 }
 ul.navbar li 
 {
@@ -55,7 +63,8 @@ ul.navbar a
 }
 a:link 
 {
-  color: blue 
+  color: blue;
+  font-size: 20px
 }
 a:visited 
 {
