@@ -3,17 +3,15 @@ app = express(),
 mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
 methodOverride = require('method-override'),
-AWS = require('aws-sdk'),
 morgan = require('morgan'),
 serveStatic = require('serve-static');
 
-AWS.config.loadFromPath('./config/aws.json');
 
 var db = require('./config/db');
 
 mongoose.connect(db.url);
 
-var port = 27017;
+var port = 3000;
 
 app.use(morgan('dev'));
 
