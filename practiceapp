@@ -1,4 +1,4 @@
-var app = angular.module('choreApp', []);
+var app = angular.module('ChoresApp', []);
 
 app.controller('MainCtrl', [
 '$scope',
