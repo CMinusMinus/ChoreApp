@@ -4,6 +4,16 @@ body
 
 <div class="topcorner"><a href="login.html">Back to Home</a></div>
 }
+
+#banner {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 900px;
+	height: 200px;
+	z-index: -1;
+}
 p.pos_fixed {
     position: fixed;
     top: 30px;
