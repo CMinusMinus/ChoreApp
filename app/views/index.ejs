@@ -34,19 +34,19 @@
   <p style="text-align: center;"></p>
 
   <p>Please select your completed task(s):<br />
-  <form method="POST" action="/tasks/complete">
+  <!--<form method="POST" action="/tasks/complete">-->
     <p><input type="checkbox" name="service" value="This be a task, yo" />This be a task, yo,.</p>
 
     <% for(var i=0; i<taskData.length; i++) {%>
        <p>
-        <input type="checkbox" name="isCompleted<%= i %>" value="<%= taskData[i]._id %>" />
+        <input type="checkbox" id="completed<%= i %>" value="<%= taskData[i]._id %>" />
         <%= taskData[i].name %><br />
         <%= taskData[i].description %><br />
         <%= taskData[i].points %>
        </p>
     <% } %>
 
-  </form>
+  <!--</form>-->
   
   <form method="POST" action="/task/create">
     <b>Task:</b><br />
@@ -63,5 +63,10 @@
     <br />
     <input type="submit" value="Submit" /></p>
   </form>
+
+  <script>
+
+  </script>
+
 </body>
 </html>

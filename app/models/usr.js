@@ -12,7 +12,7 @@ var usrSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
   pointsEarned: {
     type: Number,
     required: false
