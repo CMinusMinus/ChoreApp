@@ -7,13 +7,13 @@ module.exports = function (app, mongoose) {
     var name = req.body.name;
     var email = req.body.email;
     var password = req.body.password;
-    var gender = req.body.gender;
-
+    var pointsEarned = 0;
+    
     var newUser = new User({
       name: name,
       email: email,
       password: password,
-      gender: gender
+      pointsEarned: pointsEarned
     });
 
     newUser.save(function(err) {

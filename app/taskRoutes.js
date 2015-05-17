@@ -29,6 +29,9 @@ module.exports = function (app, mongoose) {
   app.get('/task/create', function (req, res) {
     res.redirect('http://localhost:' + 3000 +'/newtask.html');
   });
+  
+  app.post('/tasks/complete', function (req, res) {
+  });
 
   app.get('/Tasks/all', function (req, res) {
     Task.find({}, function (err, results) {

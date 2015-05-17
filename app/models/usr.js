@@ -9,13 +9,13 @@ var usrSchema = mongoose.Schema({
     required: true,
     unique: true
   },
-  gender: {
-    type: String,
-    required: false
-  },
   password: {
     type: String,
     required: true
+  }
+  pointsEarned: {
+    type: Number,
+    required: false
   }
 });
 
