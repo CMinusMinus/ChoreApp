@@ -8,7 +8,7 @@ module.exports = function (app, mongoose) {
     var email = req.body.email;
     var password = req.body.password;
     var pointsEarned = 0;
-    
+
     var newUser = new User({
       name: name,
       email: email,
@@ -54,18 +54,23 @@ module.exports = function (app, mongoose) {
     res.redirect('http://localhost/home.html');
   });
 
-  app.get('/login', function (req, res) {
+  app.post('/login', function (req, res) {
     User.findOne({email: req.body.email}, function (err, user) {
-      if (err || !user) { 
-        res.body({"error": "Failed to login. Please try again."});
-        res.redirect('http://localhost/login.html');
+      if (err || !user) {
+        res.send("Failed to login. Please try again.");
+        res.redirect('http://localhost:3000/login.html');
       }
-      user.loginCount += 1;
-      user.save(function (err) {
-        if (err) throw err;
-      });
-      res.redirect('http://localhost/home.html');
+
+      req.session.name = 'userID';
+      req.session['id'] = user._id;
+
+      res.redirect('/');
     });
+  });
+
+  app.get('/logout', function (req, res) {
+    req.session = null;
+    res.redirect('/');
   });
 
   app.get('/users/Usercount', function (req, res) {

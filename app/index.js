@@ -3,9 +3,11 @@ module.exports = function (app, mongoose) {
 
 	app.get('/', function (req, res) {
 
-		// find all tasks and store them in json object
-
-		Task
+		if (req.session['id'] == null) {
+			res.redirect('/Login.html');
+		}
+		else {
+			Task
 			.find({})
 			.where('isCompleted').equals(false)
 			.sort('-points')
@@ -15,5 +17,6 @@ module.exports = function (app, mongoose) {
 					taskData: taskData
 				});
 			});
+		}
 	});
 };

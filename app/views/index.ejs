@@ -39,12 +39,14 @@
 
     <% for(var i=0; i<taskData.length; i++) {%>
        <p>
-        <input type="checkbox" id="completed<%= i %>" value="<%= taskData[i]._id %>" />
+        <input type="checkbox" class="completed" value="<%= taskData[i]._id %>" />
         <%= taskData[i].name %><br />
         <%= taskData[i].description %><br />
         <%= taskData[i].points %>
        </p>
     <% } %>
+
+    <button id="updateTasks">Submit</button>
 
   <!--</form>-->
   
@@ -66,6 +68,25 @@
 
   <script>
 
+  var checkedTasks = [];
+
+  $("#updateTasks").on('click', function (event) {
+    $('.completed').each(function (index) {
+      if($(this).is(":checked")) {
+        //insert into array
+        checkedTasks[index] = this.value;
+      }
+    });
+    console.log(checkedTasks);
+    $.ajax({
+      type: "POST",
+      url: "/task/complete",
+      data: {checkedTasks:checkedTasks},
+      success: function() {
+        location.reload();
+      }
+    })
+  });
   </script>
 
 </body>

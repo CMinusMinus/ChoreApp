@@ -6,6 +6,8 @@ methodOverride = require('method-override'),
 morgan = require('morgan'),
 serveStatic = require('serve-static');
 path = require('path');
+cookieParser = require('cookie-parser');
+session = require('cookie-session');
 
 
 var db = require('./config/db');
@@ -18,6 +20,10 @@ app.set('views', path.join(__dirname, 'app', 'views'));
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
+app.use(cookieParser());
+app.use(session({
+	keys: ['key']
+}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
