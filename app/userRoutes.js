@@ -19,7 +19,7 @@ module.exports = function (app, mongoose) {
     newUser.save(function(err) {
       if (err) {
         console.log(err);
-        return next(err);
+        return;
       }
       else {
         res.redirect("/");

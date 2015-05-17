@@ -1,36 +1,37 @@
 module.exports = function (app, mongoose) {
-  var Task = mongoose.model('Task', require('./models/usr.js'));
+  var Task = mongoose.model('Task', require('./models/task.js'));
   var fs = require('fs');
   var util = require('util');
 
   app.post('/task/create', function (req, res) {
-    Task.create(req.body, function (err) {
+    var name = req.body.name;
+    var description = req.body.description;
+    var points = req.body.points;
+    var isComplete = false;
+
+    var newTask = new Task({
+      name: name,
+      description: description,
+      points: points,
+      isComplete: isComplete
+    });
+
+    newTask.save(function(err) {
       if (err) {
-        res.send(err);
+        console.log(err);
         return;
       }
-      res.redirect('http://localhost/task/create');//ask Curtis
+      else
+        res.redirect("/");
     });
   });
 
-  app.get('/task/create', function(req, res) {
-    
+  app.get('/task/create', function (req, res) {
+    res.redirect('http://localhost:' + 3000 +'/newtask.html');
   });
 
-/*
-  app.get('/Tasks', function (req, res) {
-    Task.findAll(function (err, Tasks) {
-      if (err) throw err;
-
-      Tasks[].save(function (err) {
-        if (err) throw err;
-      });
-      res.redirect('http://localhost/Tasks.html');
-    });
-  });
-*/
   app.get('/Tasks/all', function (req, res) {
-    Task.findAll(function (err, results) {
+    Task.find({}, function (err, results) {
       if (err || !results) {
         res.send("No tasks yet!");
       }

@@ -1,0 +1,22 @@
+{
+  "name": "ChoreApp",
+  "version": "0.0.1",
+  "description": "An app that uses a points system to make doing house chores more fun",
+  "author": "George Colson <geocolson@gmail.com>",
+  "contributors": [
+    {
+      "name": "Jacob Loeser",
+      "email": "jacobharryloeser@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "mongoose": "*",
+    "express": "*",
+    "body-parser": "~1.12.4",
+    "method-override": "~2.3.3",
+    "morgan": "~1.5.3",
+    "serve-static": "~1.9.3",
+    "path": "~0.11.14"
+  },
+  "license": "MIT"
+}
