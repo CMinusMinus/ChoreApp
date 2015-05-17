@@ -4,14 +4,27 @@ module.exports = function (app, mongoose) {
   var util = require('util');
 
   app.post('/users/new', function (req, res) {
-    User.create(req.body, function (err) {
-      if (err) {
-        res.send(err);
-        return;
-      }
-      res.send({"authorized": "200"});
+    var name = req.body.name;
+    var email = req.body.email;
+    var password = req.body.password;
+    var gender = req.body.gender;
+
+    var newUser = new User({
+      name: name,
+      email: email,
+      password: password,
+      gender: gender
     });
-    res.json(req.body);
+
+    newUser.save(function(err) {
+      if (err) {
+        console.log(err);
+        return next(err);
+      }
+      else {
+        res.redirect("/");
+      }
+    });
   });
 
   app.get('/users/all', function(req, res) {
