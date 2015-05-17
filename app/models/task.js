@@ -5,10 +5,9 @@ var TaskSchema = mongoose.Schema({
     required: true
   },
   points: {
-    type: int,
+    type: Number,
     required: false
   },
-  isAquired: boolean,
   isCompleted: boolean
 });
 

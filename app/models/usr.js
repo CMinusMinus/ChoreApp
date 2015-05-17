@@ -13,11 +13,10 @@ var usrSchema = mongoose.Schema({
     type: String,
     required: false
   },
-  id: {
-    type: int,
+  password: {
+    type: String,
     required: true
   }
 });
-
 
 module.exports = usrSchema;

@@ -16,11 +16,14 @@ var port = 3000;
 app.use(morgan('dev'));
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use('/', express.static(__dirname + '/public'));
-require('./app/routes')(app, mongoose);
-
+require('./app/taskRoutes')(app, mongoose);
+require('./app/userRoutes')(app, mongoose);
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
