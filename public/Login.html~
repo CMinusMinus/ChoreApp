@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
   <title>DidjaDoIt?</title>
@@ -5,8 +6,11 @@
 
 <body>
 
+
+
+
 <link href = 'Stylesheet.css' rel = 'stylesheet'>
-<img id="banner1" src="https://41.media.tumblr.com/5cc0fa3af402a7482817dd5abaf6bc58/tumblr_nogvlmD54D1r320czo1_1280.png" alt="Banner" width = 100% height = 100>
+<img id="banner1" src="https://raw.githubusercontent.com/CMinusMinus/ChoreApp/master/public/img/banner1.png" alt="Banner" width = 100% height = 100>
 
 <div style = 'center'>
 	<div style="box-sizing: border-box; display: center; width: auto; max-width: 480px; background-color: #FFFFFF; border: 2x solid #0361A8; border-radius: 5px; box-shadow: 0px 0px 8px #0361A8; margin: 150px auto auto;">
@@ -27,7 +31,7 @@
 <tr><td>Password:</td><td><input type="password" name="password"></td></tr>
 <tr><td>&nbsp;</td><td><input type="submit" value="Submit"></td></tr>
 <tr><td colspan=2>&nbsp;</td></tr>
-<tr><td colspan=2>Not member yet? Click <a href="http://localhost/user/new.html">here</a> to register.</td></tr>
+<tr><td colspan=2>Not a member yet? Click <a href="newuser.html">here</a> to register.</td></tr>
 </table>
 </form>
 </div></div></div>

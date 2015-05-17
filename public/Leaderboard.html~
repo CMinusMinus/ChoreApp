@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>DidjaDoIt?</title>
+</head>
+<body>
+	<link href = 'Stylesheet.css' rel = 'stylesheet'>
+	<img id="banner1" src="https://raw.githubusercontent.com/CMinusMinus/ChoreApp/master/public/img/banner1.png" alt="Banner" width = 100% height = 100>	
+	<h1>Leaderboard:</h1>
+	<font size = "22"><center>
+                  1. User1 <br>
+                  2. User2 <br>
+                  3. User3 <br>
+                  4. User4
+                  </font>
+</body>
+</html>

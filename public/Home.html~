@@ -5,7 +5,6 @@
 </head>
 <body>
 	<link href = 'Stylesheet.css' rel = 'stylesheet'>
-	<img id="banner1" src="https://raw.githubusercontent.com/CMinusMinus/ChoreApp/master/public/img/banner1.png" alt="Banner" width = 100% height = 100>
 	<h2><a href="Login.html">Login</a></h2>
 	
 	<h1>WELCOME!</h1>
