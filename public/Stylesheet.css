@@ -5,6 +5,10 @@ body
 <div class="topcorner"><a href="login.html">Back to Home</a></div>
 }
 
+body {
+	background-color: #EECEFF;
+}
+
 #banner {
 	position: relative;
 	top: 0px;
