@@ -7,6 +7,7 @@ module.exports = function (app, mongoose) {
 
 		Task
 			.find({})
+			.where('isCompleted').equals(false)
 			.sort('-points')
 			.exec(function (err, taskData) {
 				res.render('index', {

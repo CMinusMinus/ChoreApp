@@ -7,13 +7,13 @@ module.exports = function (app, mongoose) {
     var name = req.body.name;
     var description = req.body.description;
     var points = req.body.points;
-    var isComplete = false;
+    var isCompleted = false;
 
     var newTask = new Task({
       name: name,
       description: description,
       points: points,
-      isComplete: isComplete
+      isCompleted: isCompleted
     });
 
     newTask.save(function(err) {
