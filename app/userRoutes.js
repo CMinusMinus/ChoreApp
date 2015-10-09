@@ -1,33 +1,34 @@
-module.exports = function (app, mongoose) {
-  var User = mongoose.model('User', require('./models/usr.js'));
-  var fs = require('fs');
-  var util = require('util');
+module.exports = function (app, mongoose) { //allows routes to be accessible to other
+  var User = mongoose.model('User', require('./models/usr.js'));//includes the user object
+  var fs = require('fs'); //no clue
+  var util = require('util'); //internal API's
 
-  app.post('/users/new', function (req, res) {
+  app.post('/users/new', function (req, res) { //creates a new user from the form
     var name = req.body.name;
     var email = req.body.email;
     var password = req.body.password;
     var pointsEarned = 0;
 
-    var newUser = new User({
+    var newUser = new User({ //initiates new user
       name: name,
       email: email,
       password: password,
       pointsEarned: pointsEarned
     });
 
-    newUser.save(function(err) {
-      if (err) {
-        console.log(err);
+    newUser.save(function(err) { //saves new user in data base
+      if (err) { //if fails
+        console.log(err); //logs description of error that caused failure
+
         return;
       }
-      else {
-        res.redirect("/");
+      else { //if successful
+        res.redirect("/"); //redirects to home page
       }
     });
   });
 
-  app.get('/users/all', function(req, res) {
+  app.get('/users/all', function(req, res) { //route to all users stored in the database
     User.find({}, function (err, results) {
       if (err) {
         res.send(err);

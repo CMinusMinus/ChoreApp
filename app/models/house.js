@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var HouseSchema = mongoose.Schema({
 	usrs: {
 		type: Array
-		required: true
+		//required: true
 	},
 	tasks: {
 		type: Array
-		required: false
+		//required: false
 	}
 });
